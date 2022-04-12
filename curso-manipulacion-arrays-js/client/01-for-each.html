@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .tarea {
+            display: flex; 
+          
+       }
+       .tarea input {
+           display: flex;
+       }
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+    <div class="tarea" id="tarea"></div>
+    <script>
+        const products = [
+            { title: "Burger", price: 7 },
+            { title: "Pizza", price: 14},
+
+        ];
+
+        const app = document.getElementById("app");
+        products.forEach(product => {
+            app.innerHTML += `<li>${ product.title} - ${product.price}</li>`;
+        })
+
+       const tareas = [
+       {materia: "Matemáticas", completado: true},    
+       {materia: "Contabilidad V", completado: false},
+       {materia: "Algoritmos", completado: true}
+    ];
+      const tarea = document.getElementById("tarea");
+      tareas.forEach(tareita => {
+          tarea.innerHTML += `<li>${tareita.materia}
+            </li>`;
+           if(tareita.completado == true) {
+               const agregar = tarea;
+               agregar.innerHTML += `<input type="checkbox" checked>`
+           }
+      });
+    
+    </script>
+</body>
+</html>
